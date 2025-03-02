@@ -1,6 +1,6 @@
 # Secure Authentication System
+The Secure Authentication System follows a domain-driven design approach with a clean architecture pattern. This document outlines the architectural decisions, components, and interactions within the system.
 
-A comprehensive authentication system with advanced security features built with Django.
 
 ## Features
 
@@ -101,7 +101,6 @@ The system follows a clean, domain-driven design architecture with clear separat
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/secure-auth-system.git
    cd secure-auth-system
    ```
 
