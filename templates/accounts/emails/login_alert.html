@@ -1,0 +1,22 @@
+{% extends 'email_base.html' %}
+
+{% block content %}
+<h2>New Login Detected</h2>
+
+<p>Hello {{ username }},</p>
+
+<p>We detected a new login to your account from an unrecognized device:</p>
+
+<ul>
+    <li><strong>IP Address:</strong> {{ ip_address }}</li>
+    <li><strong>Browser:</strong> {{ user_agent }}</li>
+    <li><strong>Time:</strong> {{ timestamp }}</li>
+</ul>
+
+<p>If this wasn't you, please change your password immediately and enable two-factor authentication if you haven't already.</p>
+
+<div class="button-container">
+    <a href="{{ password_change_url }}" class="button">Change Password</a>
+    <a href="{{ setup_2fa_url }}" class="button">Setup 2FA</a>
+</div>
+{% endblock %}

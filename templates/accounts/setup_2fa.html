@@ -1,0 +1,33 @@
+{% extends 'accounts/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Setup 2FA{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Setup Two-Factor Authentication</h2>
+                
+                <div class="text-center mb-4">
+                    <img src="https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl={{ qr_uri|urlencode }}"
+                         alt="QR Code" class="img-fluid">
+                </div>
+                
+                <ol class="mb-4">
+                    <li>Install an authenticator app (like Google Authenticator)</li>
+                    <li>Scan the QR code above</li>
+                    <li>Enter the 6-digit code from your app below</li>
+                </ol>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-primary w-100">Verify and Enable 2FA</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

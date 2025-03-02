@@ -1,0 +1,20 @@
+{% extends 'email_base.html' %}
+
+{% block content %}
+<h2>Two-Factor Authentication Disabled</h2>
+
+<p>Hello {{ username }},</p>
+
+<p>Two-factor authentication has been disabled for your account. If you didn't make this change, please:</p>
+
+<ol>
+    <li>Change your password immediately</li>
+    <li>Re-enable two-factor authentication</li>
+    <li>Contact support if you need assistance</li>
+</ol>
+
+<div class="button-container">
+    <a href="{{ password_change_url }}" class="button">Change Password</a>
+    <a href="{{ setup_2fa_url }}" class="button">Re-enable 2FA</a>
+</div>
+{% endblock %}
